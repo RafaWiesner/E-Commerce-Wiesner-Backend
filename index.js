@@ -21,8 +21,11 @@ const PORT = process.env.PORT;
 console.log(process.env.JWT_SECRET) 
 
 // Middleware
-app.use(cors());
 app.use(express.json());
+app.use(cors({
+  origin: "https://e-commerce-wiesner-frontend.vercel.app/",
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+}));
 
 
 
