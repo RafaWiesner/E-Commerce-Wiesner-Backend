@@ -22,10 +22,15 @@ console.log(process.env.JWT_SECRET)
 
 // Middleware
 app.use(express.json());
+
+const allowedOrigins = [
+  'https://e-commerce-wiesner-frontend.vercel.app',
+  'http://localhost:5173' 
+];
+
 app.use(cors({
-  origin: "https://e-commerce-wiesner-frontend.vercel.app/",
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
-}));
+  origin: allowedOrigins,
+  credentials: true,
 
 
 
